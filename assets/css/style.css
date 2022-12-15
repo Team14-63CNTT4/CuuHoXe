@@ -135,14 +135,17 @@ img{
 }
 
 hr{
-    width:82%;
-    border: 1px solid orange;
+    width: 100%;
+    background-color: orange;
+    height: 0.6px;
 }
 
 .foooter-background{
     color: white;
     background-color: rgb(20, 26, 26);
     padding-top: 2em;
+    font-family: Calibri;
+    font-size: 17.5px;
 }
 
 .footer-icon{
@@ -195,5 +198,16 @@ hr{
     }
     
 #top-up:hover {
-    color: #333
+    color: orange;
+}
+
+.col-sm-6 p{
+    font-family: Calibri;
+}
+
+#artical hr {
+    width: 50%;
+    background-color: orange;
+    height: 1px;
+    margin: 0 auto;
 }
