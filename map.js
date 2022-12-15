@@ -25,8 +25,8 @@
           zoom: 13
         },
         'hna': {
-          center: {lat:20.583521 , lng:105.922989 },
-          zoom: 13
+          center: {lat:20.466443 , lng:106.010190 },
+          zoom: 18
         },
         'hy': {
           center: {lat:20.8193369 , lng: 106.0314504},
