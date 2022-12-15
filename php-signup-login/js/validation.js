@@ -16,14 +16,14 @@ validation
         {
             validator: (value) => () => {
                 return fetch("validate-email.php?email=" + encodeURIComponent(value))
-                       .then(function(response) {
-                           return response.json();
-                       })
-                       .then(function(json) {
-                           return json.available;
-                       });
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(json) {
+                        return json.available;
+                    });
             },
-            errorMessage: "email already taken"
+            errorMessage: "Email đã được sử dụng"
         }
     ])
     .addField("#password", [
@@ -39,22 +39,9 @@ validation
             validator: (value, fields) => {
                 return value === fields["#password"].elem.value;
             },
-            errorMessage: "Passwords should match"
+            errorMessage: "Mật khẩu không giống nhau"
         }
     ])
     .onSuccess((event) => {
         document.getElementById("signup").submit();
     });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
