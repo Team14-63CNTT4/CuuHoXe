@@ -1,27 +1,27 @@
 <?php
 
 if (empty($_POST["name"])) {
-    die("Name is required");
+    die("Yêu cầu điền tên tài khoản");
 }
 
 if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    die("Valid email is required");
+    die("Yêu cầu Email hợp lệ");
 }
 
 if (strlen($_POST["password"]) < 8) {
-    die("Password must be at least 8 characters");
+    die("Mật khẩu phải chứa ít nhất 8 ký tự");
 }
 
 if ( ! preg_match("/[a-z]/i", $_POST["password"])) {
-    die("Password must contain at least one letter");
+    die("Mật khẩu phải chứa ít nhất một chữ cái thường");
 }
 
 if ( ! preg_match("/[0-9]/", $_POST["password"])) {
-    die("Password must contain at least one number");
+    die("Mật khẩu phải chứa ít nhất một chữ số");
 }
 
 if ($_POST["password"] !== $_POST["password_confirmation"]) {
-    die("Passwords must match");
+    die("Mật khẩu không giống nhau");
 }
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
@@ -38,10 +38,10 @@ if ( ! $stmt->prepare($sql)) {
 }
 
 $stmt->bind_param("sss",
-                  $_POST["name"],
-                  $_POST["email"],
-                  $password_hash);
-                  
+                $_POST["name"],
+                $_POST["email"],
+                $password_hash);
+                
 if ($stmt->execute()) {
 
     header("Location: signup-success.html");
