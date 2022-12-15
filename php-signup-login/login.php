@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             $_SESSION["user_id"] = $user["id"];
             
-            header("Location: index.php");
+            header("Location: user.php");
             exit;
         }
     }
@@ -49,6 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     </script>
     <style>
+
+        * {
+            box-sizing: border-box
+        }
+
         p, header, img{
             margin: 0;
             padding: 0;
@@ -57,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         body {
-            background: linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.8)) ,url(./../assets/image/signinup.jpg) no-repeat center;
+            background: linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.8)) ,url(./../assets/image/road2.jpg) no-repeat center;
             background-size: cover;
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -65,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             -ms-background-size: cover;
             background-attachment: fixed;
             font-family: 'Dosis', sans-serif;
+            text-align: center;
         }
 
         header {
@@ -83,20 +89,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         p {
             margin: 1em 1vw 1.5em;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
 
-        a {
-            color:azure;
+        a:hover {
+            font-weight: 425;
+            text-decoration: none;
         }
 
-        label, input, #login, #email, #password, div{
+        #email, #password {
             text-align: center;
             margin: 0 auto;
         }
 
         input {
+            /* box-sizing: border-box; */
             background-color: white;
+            color: #000000;
+            width: 250px;
         }
         
         button {
@@ -106,22 +116,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         button:hover{
             background-color: orange;
         }
+        
+        em {
+            color: red;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0px 0px 11px #000000        }
     </style>
 </head>
 <body>
     <header>
-        <a href="../index.html">ALO CỨU HỘ 14</a>
+        <a style="color: aliceblue;" href="../index.php">ALO CỨU HỘ 14</a>
     </header>
-    <p>Hãy điền tên đăng nhập và mật khẩu tại đây.</p>
+    <p>Hãy điền Email và Mật khẩu tại đây.</p>
     
     <?php if ($is_invalid): ?>
-        <em>Tài khoản hoặc mật khẩu lỗi!</em>
+        <em>Email hoặc mật khẩu lỗi!</em>
     <?php endif; ?>
     
     <form method="post">
         
         <label for="email">Email</label>
-        <input type="email" name="email" id="email"
+        <input type="email" name="email" id="email" autofocus
         value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
         
         <label for="password">Mật Khẩu</label>
@@ -129,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <br>
         <button>Đăng Nhập</button>
     </form>
-    <p>Chưa có tài khoản? <a href="signup.html">Đăng ký tại đây.</a></p>
+    <p>Chưa có tài khoản? <a style="color: aliceblue;" href="signup.html">Đăng ký</a></p>
     
 </body>
 </html>
