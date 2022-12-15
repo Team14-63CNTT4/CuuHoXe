@@ -18,6 +18,11 @@
         }
     </script>
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         p, header, img, h1{
             margin: 0;
             padding: 0;
@@ -26,7 +31,7 @@
         }
 
         body {
-            background: linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.8)) ,url(./../assets/image/signinup.jpg) no-repeat center;
+            background: linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.8)) ,url(./../assets/image/road3.jpg) no-repeat center;
             background-size: cover;
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -34,6 +39,7 @@
             -ms-background-size: cover;
             background-attachment: fixed;
             font-family: 'Dosis', sans-serif;
+            text-align: center;
         }
 
         header {
@@ -51,12 +57,15 @@
 
         p {
             margin: 1em 1vw 1.5em;
-            text-align: center;
             font-size: 1.2em;
         }
 
         a {
             color:azure;
+        }
+        a:hover {
+            font-weight: 425;
+            text-decoration: none;
         }
         
         input, #signup, div{
@@ -66,6 +75,8 @@
 
         input {
             background-color: white;
+            color: #000000;
+            width: 250px;
         }
         
         button {
@@ -79,13 +90,13 @@
 <body>
     
     <header>
-        <a href="./../index.html">ALO CỨU HỘ 14</a>
+        <a href="./../index.php">ALO CỨU HỘ 14</a>
     </header>
     <p>Hãy tạo một tài khoản để sử dụng toàn bộ các tính năng của chúng tôi.</p>
     <form action="process-signup.php" method="post" id="signup" novalidate>
         <div>
-            <label for="name">Tên đăng nhập</label>
-            <input type="text" id="name" name="name">
+            <label for="name">Tên bạn</label>
+            <input type="text" id="name" name="name" autofocus>
         </div>
         
         <div>
@@ -105,7 +116,7 @@
         <br>
         <button>Đăng Ký</button>
 
-        <p> Đã có tài khoản? <a href="login.php">Đăng nhập tại đây. </a></p>
+        <p> Đã có tài khoản? <a href="login.php">Đăng nhập </a></p>
     </form>
     
 </body>
